@@ -17,7 +17,7 @@ public class SearchController {
     @Autowired
     SearchService searchService;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://pieropan.vercel.app/")
     @GetMapping(value = "/user/{userName}")
     public ResponseEntity<?> searchUserName(@PathVariable String userName) {
         try {
@@ -28,7 +28,7 @@ public class SearchController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://pieropan.vercel.app/")
     @GetMapping(value = "/repositorie/{userName}")
     public ResponseEntity<?> getRepositories(@PathVariable String userName) {
         try {
