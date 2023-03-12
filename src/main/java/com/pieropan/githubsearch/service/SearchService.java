@@ -32,7 +32,8 @@ public class SearchService {
             return userDto;
 
         } catch (Exception ex) {
-            throw new Exception("Usuário não encontrado!");
+            // uma melhor lógica será elaborada!
+            throw new Exception(ex.getMessage().contains("rate limit") ? "Servidor indisponível!" : "Usuário não encontrado!");
         }
     }
 
