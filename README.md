@@ -1,7 +1,7 @@
 # github-search-api 😀
 
 ## Acesso o projeto
-<a href="https://pieropan.vercel.app/">Clique aqui</a>
+<a href="https://pieropan.vercel.app/" target="_blank">Clique aqui</a>
 <hr>
 
 ## Como Funciona 😉
