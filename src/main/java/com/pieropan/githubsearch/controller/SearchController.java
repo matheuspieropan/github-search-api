@@ -4,9 +4,12 @@ import com.pieropan.githubsearch.dto.RepositoriesDto;
 import com.pieropan.githubsearch.dto.UserDto;
 import com.pieropan.githubsearch.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -17,25 +20,17 @@ public class SearchController {
     @Autowired
     SearchService searchService;
 
-    @CrossOrigin(origins = "https://pieropan.vercel.app/")
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/user/{userName}")
     public ResponseEntity<?> searchUserName(@PathVariable String userName) {
-        try {
-            UserDto userDto = searchService.searchUserName(userName);
-            return ResponseEntity.ok().body(userDto);
-        } catch (Exception ex) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-        }
+        UserDto userDto = searchService.searchUserName(userName);
+        return ResponseEntity.ok().body(userDto);
     }
 
-    @CrossOrigin(origins = "https://pieropan.vercel.app/")
+    @CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping(value = "/repositorie/{userName}")
     public ResponseEntity<?> getRepositories(@PathVariable String userName) {
-        try {
-            List<RepositoriesDto> repositories = searchService.getRepositories(userName);
-            return ResponseEntity.ok().body(repositories);
-        } catch (Exception ex) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-        }
+        List<RepositoriesDto> repositories = searchService.getRepositories(userName);
+        return ResponseEntity.ok().body(repositories);
     }
 }
