@@ -19,4 +19,4 @@ Github-Search tem como finalidade consumir recursos da API do GitHub. O sistema 
 ### Recursos utilizados
 Sistema desenvolvido segue boas práticas de uma API REST. Projeto em camadas: controladores e services. Data Transfer Object (dto) como retono
 para o frontend. Implementação da classe GlobalExceptionHandler. Que através de anotações como <b>@ControllerAdvice @ExceptionHandler</b> conseguimos tratar as exceções
-do projeto, informando a mensagem do erro ocorrido e o status HTTP.
+do projeto, informando a mensagem do erro ocorrido e o status HTTP. Utilizado Feign para comunicação com a API do git
