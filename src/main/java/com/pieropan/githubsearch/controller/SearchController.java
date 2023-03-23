@@ -2,6 +2,7 @@ package com.pieropan.githubsearch.controller;
 
 import com.pieropan.githubsearch.dto.RepositoriesDto;
 import com.pieropan.githubsearch.dto.UserDto;
+import com.pieropan.githubsearch.feignclient.GitHubFeignClient;
 import com.pieropan.githubsearch.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
